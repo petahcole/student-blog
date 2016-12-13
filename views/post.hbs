@@ -1,0 +1,14 @@
+<main class="container">
+{{#blog}}
+<section class="card">
+<h4>{{firstName}} {{lastName}}</h4>
+<h6>{{cohortID}}</h6>
+<p>{{post}}</p>
+</section>
+{{/blog}}
+<a href="/create" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+
+ <button id="delete" data-id="{{id}}" class="btn waves-effect waves-light" type="delete">Delete
+  </button>
+
+</main>
