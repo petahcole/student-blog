@@ -18,7 +18,7 @@ $(() => {
 })
 
 function validateForm()  {
-    let $form = $(".form").val();
+    let $form = $(".form");
     console.log($form);
 //   if (!post) {
 //     return false
