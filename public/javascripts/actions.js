@@ -19,15 +19,17 @@ $(() => {
 
 function validateForm()  {
     let $form = $(".form");
-    console.log($form);
-//   if (!post) {
-//     return false
-//   } 
-//   if (!post.firstName || !post.lastName || !post.cohortID || !post.post)  {
-//     return false
-//   }
-//   if (typeof post.firstName !== "string" || typeof post.lastName !== "string" || typeof post.cohortID !== "string" || typeof post.post !== "string")  {
-//     return false
-//   }
-//   return true
+  if (!$form) {
+    alert("No input")
+    return false
+  } 
+  if (!$form.firstName || !$form.lastName || !$form.cohortID || !$form.post)  {
+    alert(`Missing input value`);
+    return false
+  }
+  if (typeof $form.firstName !== "string" || typeof $form.lastName !== "string" || typeof $form.cohortID !== "string" || typeof $form.post !== "string")  {
+    alert("Please only use text");
+    return false
+  }
+  
 } 
