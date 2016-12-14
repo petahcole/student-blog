@@ -1,7 +1,7 @@
 <h3 class="center">Create New Post</h3>
 
 
-    <form class="form container col s12" action="/blogs" method="post" onsubmit="return validateForm()">
+    <form class="form container col s12" action="/blogs" method="post">
        <div class="row"> 
         <div class="input-field col s4">
             <label class="actve" name="first_name">First Name</label>
@@ -24,11 +24,11 @@
             <div class="input-field col s12">
              <label for="textarea1">Post</label>
               <br>
-             <textarea id="textarea1" class="materialize-textarea" name="post"></textarea>        
+             <textarea id="post" class="materialize-textarea" name="post"></textarea>        
             </div>
          </div>
         <div class="container center">
-            <button class="btn waves-effect waves-light" type="submit">Submit
+            <button class="submit btn waves-effect waves-light" type="submit">Submit
             </button> 
         </div>
     </form>

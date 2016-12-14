@@ -17,20 +17,26 @@ $(() => {
   })
 })
 
+$(".submit").click(function(event)   {
+    //  event.preventDefault()
+  if(validateForm() == false)   {
+       event.preventDefault()
+  }
+})
+
 function validateForm()  {
-    let $form = $(".form");
-  if (!$form) {
-    alert("No input")
-    return false
+    let postObj = {}
+    postObj.firstName = $("#first_name").val();
+    postObj.lastName = $("#last_name").val();
+    postObj.cohortID = $("#cohortID").val();
+    postObj.post = $("#post").val();
+
+  if ((typeof postObj.firstName == "string" && postObj.firstName.trim() != "" && isNaN(postObj.firstName)) &&
+       (typeof postObj.lastName == "string" && postObj.lastName.trim() != "" && isNaN(postObj.lastName)) &&
+       (typeof postObj.cohortID == "string" && postObj.cohortID.trim() != "" && isNaN(postObj.cohortID)) &&
+       (typeof postObj.post == "string" && postObj.post.trim() != "" && isNaN(postObj.post)) )
+  {
+    return true
   } 
-  if (!$form.firstName || !$form.lastName || !$form.cohortID || !$form.post)  {
-    alert(`Missing input value`);
-    console.log($form.firstName, form.lastName, $form.cohortID, $form.posts)
-    return false
-  }
-  if (typeof $form.firstName !== "string" || typeof $form.lastName !== "string" || typeof $form.cohortID !== "string" || typeof $form.post !== "string")  {
-    alert("Please only use text");
-    return false
-  }
-  
-} 
+  return false
+}

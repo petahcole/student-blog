@@ -52,20 +52,18 @@ if (isValidPost(req.body))  {
       res.redirect("/blogs")
     })
   } else {
+    res.status(500);
     res.render("error", {message: "Invalid Input"})
   }
 })
 
 function isValidPost(post)  {
-  if (!post) {
-    return false
-  } 
-  if (!post.firstName || !post.lastName || !post.cohortID || !post.post)  {
-    return false
-  }
-  if (typeof post.firstName !== "string" || typeof post.lastName !== "string" || typeof post.cohortID !== "string" || typeof post.post !== "string")  {
-    return false
-  }
+  if ((typeof post.firstName == "string" && post.firstName.trim() != "" && isNaN(post.firstName)) &&
+       (typeof post.lastName == "string" && post.lastName.trim() != "" && isNaN(post.lastName)) &&
+       (typeof post.cohortID == "string" && post.cohortID.trim() != "" && isNaN(post.cohortID)) &&
+       (typeof post.post == "string" && post.post.trim() != "" && isNaN(post.post)) )
+  {
   return true
+  }
 } 
 module.exports = router;
