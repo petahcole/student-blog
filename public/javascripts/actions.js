@@ -25,6 +25,7 @@ function validateForm()  {
   } 
   if (!$form.firstName || !$form.lastName || !$form.cohortID || !$form.post)  {
     alert(`Missing input value`);
+    console.log($form.firstName, form.lastName, $form.cohortID, $form.posts)
     return false
   }
   if (typeof $form.firstName !== "string" || typeof $form.lastName !== "string" || typeof $form.cohortID !== "string" || typeof $form.post !== "string")  {
