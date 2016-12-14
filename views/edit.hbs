@@ -1,7 +1,14 @@
-<h3 class="center">Create New Post</h3>
+<main class="container">
+{{#blog}}
+<section class="card">
+<h4>{{firstName}} {{lastName}}</h4>
+<h6>{{cohortID}}</h6>
+<p>{{post}}</p>
+</section>
 
 
-    <form class="container col s12" action="/blogs" method="post" onsubmit="return validateForm()">
+
+    <form class="container col s12" action="/blogs/{{id}}?_method=put" method="POST" onsubmit="return validateForm()">
        <div class="row"> 
         <div class="input-field col s4">
             <label class="actve" name="first_name">First Name</label>
@@ -28,10 +35,9 @@
             </div>
          </div>
         <div class="container center">
-            <button class="btn waves-effect waves-light" type="submit">Submit
-            </button> 
+            <button class="btn waves-effect waves-light" type="submit">Update
+            </button>
         </div>
     </form>
-
-
-
+{{/blog}}
+</main>

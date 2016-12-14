@@ -5,10 +5,15 @@
 <h6>{{cohortID}}</h6>
 <p>{{post}}</p>
 </section>
-{{/blog}}
+
 <a href="/create" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
 
  <button id="delete" data-id="{{id}}" class="btn waves-effect waves-light" type="delete">Delete
-  </button>
+ </button>
 
+<a href="/edit/{{id}}">
+  <button id="edit" data-id="{{id}}" class="btn waves-effect waves-light" type="edit">Edit Post
+ </button>
+ </a>
+{{/blog}}
 </main>
